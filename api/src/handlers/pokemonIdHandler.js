@@ -5,7 +5,7 @@ const getDetailPokemonById = async (req, res) => {
         const { id } = req.params;
         
         const pokemon = await getPokemonById(id);
-        console.log(pokemon);
+        //console.log(pokemon);
         //Valido
         if(!pokemon){      
             throw new Error(`No existe el pokemon con el id: ${id}`);
