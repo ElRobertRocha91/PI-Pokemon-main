@@ -4,11 +4,28 @@ import { useDispatch, useSelector } from "react-redux";
 import { getPokemons } from "../../redux/actions";
 import { Link } from "react-router-dom";
 import Card from "../card/Card";
+import Paginado from "../paginado/Paginado";
+
+//useSelector = Hooks que funciona igual que el mapStateToProps;
+//useDispatch = Hooks que funciona igual que el mapdispatchToProps;
+//useEffect = Hooks que emula los ciclos de vida del componente(montaje, desmontaje y actualización);
 
 export default function Home(){
     const dispatch = useDispatch();//=> Lo usamos para despachar las acciones
     const allPokemons = useSelector((state) => state.pokemons);//Esto es lo mismo que hacer mapStateToPros()
     
+    //Paginado:------------------------------------//
+    const [pageCurrent, setPageCurrent] = useState(1);
+    const pokemonPerPage = 12;
+
+    const indexOfLastPokemon = pageCurrent * pokemonPerPage;// 1 * 12 = 12
+    const indexOfFirstPokemon = indexOfLastPokemon - pokemonPerPage;// 12 - 12 = 0
+    const pokemonCurrent = allPokemons.slice(indexOfFirstPokemon, indexOfLastPokemon);//(0, 12) ==> [Devuelve un Array con las 12 primeros elementos]
+    const paginado = (numberPage) => {
+        setPageCurrent(numberPage);
+    }
+    //---------------------------------------------//
+
     useEffect( () => {
         dispatch(getPokemons());
     }, [dispatch])
@@ -42,11 +59,17 @@ export default function Home(){
                     <option value="Created">DB</option>
                     <option value="Existing">API</option>
                 </select>
+                {/* Aqui renderizo el  Paginado */}
+                <Paginado
+                pokemonPerPage={pokemonPerPage}
+                allPokemons={allPokemons.length}
+                paginado={paginado}
+                />
                 {/*Renderizo los pokemon en las card */}
                 {
-                   allPokemons && allPokemons.map(pokemon => {
+                   pokemonCurrent && pokemonCurrent.map(pokemon => {
                     return(
-                       <Card image={pokemon.image} name={pokemon.name} types={pokemon.types}/> 
+                       <Card key={pokemon.id} image={pokemon.image} name={pokemon.name} types={pokemon.types}/> 
                     )
                    }) 
                 }
