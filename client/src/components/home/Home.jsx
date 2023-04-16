@@ -5,6 +5,7 @@ import { getPokemons } from "../../redux/actions";
 import { Link } from "react-router-dom";
 import Card from "../card/Card";
 import Paginado from "../paginado/Paginado";
+import SearchBar from "../searchBar/SearchBar";
 
 //useSelector = Hooks que funciona igual que el mapStateToProps;
 //useDispatch = Hooks que funciona igual que el mapdispatchToProps;
@@ -59,6 +60,10 @@ export default function Home(){
                     <option value="Created">DB</option>
                     <option value="Existing">API</option>
                 </select>
+                {/* Aqui renderizamos el input de busqueda por nombre */}
+                <div>
+                    <SearchBar/>
+                </div>
                 {/* Aqui renderizo el  Paginado */}
                 <Paginado
                 pokemonPerPage={pokemonPerPage}
