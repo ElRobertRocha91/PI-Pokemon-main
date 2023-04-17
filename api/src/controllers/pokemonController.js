@@ -21,7 +21,7 @@ const getApiInfo = async () => {
                 id: obj.data.id,
                 name: obj.data.name,
                 image: obj.data.sprites.front_default,
-                types: obj.data.types.map((el) => el.type.name),
+                types: obj.data.types.map((el) => el.type.name).join("-"),
                 live: obj.data.stats[0].base_stat,
                 attack: obj.data.stats[1].base_stat,
                 defense: obj.data.stats[2].base_stat,
