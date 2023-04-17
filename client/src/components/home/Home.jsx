@@ -74,7 +74,9 @@ export default function Home(){
                 {
                    pokemonCurrent && pokemonCurrent.map(pokemon => {
                     return(
-                       <Card key={pokemon.id} image={pokemon.image} name={pokemon.name} types={pokemon.types}/> 
+                        <Link to={`/detail/${pokemon.id}`}>
+                          <Card key={pokemon.id} image={pokemon.image} name={pokemon.name} types={pokemon.types}/> 
+                        </Link>
                     )
                    }) 
                 }

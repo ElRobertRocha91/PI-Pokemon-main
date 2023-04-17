@@ -41,7 +41,7 @@ export function getPokemonByName(name){
 export function getDetails(id){
     return async function(dispatch){
         try {
-            var json = await axios.get("http://localhost:3001/videogames/" + id);
+            var json = await axios.get("http://localhost:3001/pokemons/" + id);
             return dispatch({
                 type: GET_DETAILS,
                 payload: json.data

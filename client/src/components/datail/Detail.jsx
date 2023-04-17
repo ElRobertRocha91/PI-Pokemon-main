@@ -27,16 +27,16 @@ export default function Detail(){
                     <div>
                         <article>
                             <p><span>Id:</span>{myPokemon.id}</p>
-                            <img src={myPokemon.image} alt="image not foud"/>
+                            <img src={myPokemon.image} alt="image"/>
                             <h2>{myPokemon.name}</h2>
                             <div>
-                                <p><span>Live:</span>{myPokemon.live}</p>
-                                <p><span>Attack:</span>{myPokemon.attack}</p>
-                                <p><span>Defense:</span>{myPokemon.defense}</p>
-                                <p><span>Velocity:</span>{myPokemon.velocity}</p>
-                                <p><span>Height:</span>{myPokemon.height}</p>
-                                <p><span>Weight</span>{myPokemon.weight}</p>
-                                <p><span>Types:</span>{myPokemon.types}</p>
+                                <p><span>Live: </span>{myPokemon.live}</p>
+                                <p><span>Attack: </span>{myPokemon.attack}</p>
+                                <p><span>Defense: </span>{myPokemon.defense}</p>
+                                <p><span>Velocity: </span>{myPokemon.velocity}</p>
+                                <p><span>Height: </span>{myPokemon.height}</p>
+                                <p><span>Weight: </span>{myPokemon.weight}</p>
+                                <p><span>Types: </span>{myPokemon.types}</p>
                             </div>
                         </article>
                     </div> : 
