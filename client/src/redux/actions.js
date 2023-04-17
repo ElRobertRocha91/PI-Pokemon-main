@@ -1,4 +1,4 @@
-import { GET_POKEMONS, GET_POKEMON_BY_NAME } from "./action-types";
+import { GET_DETAILS, GET_POKEMONS, GET_POKEMON_BY_NAME } from "./action-types";
 import axios from "axios";
 
 //Creo una función para obtener todos los pokemones:
@@ -29,6 +29,21 @@ export function getPokemonByName(name){
             var json = await axios.get(`http://localhost:3001/pokemons?name=${name}`);
             return dispatch({
                 type: GET_POKEMON_BY_NAME,
+                payload: json.data
+            })
+        } catch (error) {
+            console.log(error);
+        }
+    }
+}
+
+//Función que pondremos sobre cada Card para obtener el detallado de cada pokemon:
+export function getDetails(id){
+    return async function(dispatch){
+        try {
+            var json = await axios.get("http://localhost:3001/videogames/" + id);
+            return dispatch({
+                type: GET_DETAILS,
                 payload: json.data
             })
         } catch (error) {
