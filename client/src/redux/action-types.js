@@ -4,3 +4,5 @@ export const GET_DETAILS = "GET_DETAILS";
 export const GET_TYPES = "GET_TYPES";
 export const FILTER_TYPES = "FILTER_TYPES";
 export const FILTER_CREATED = "FILTER_CREATED";
+export const ORDER_BY_NAME = "ORDER_BY_NAME";
+export const ORDER_BY_ATTACK = "ORDER_BY_ATTACK";

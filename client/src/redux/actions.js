@@ -1,4 +1,4 @@
-import { FILTER_CREATED, FILTER_TYPES, GET_DETAILS, GET_POKEMONS, GET_POKEMON_BY_NAME, GET_TYPES } from "./action-types";
+import { FILTER_CREATED, FILTER_TYPES, GET_DETAILS, GET_POKEMONS, GET_POKEMON_BY_NAME, GET_TYPES, ORDER_BY_ATTACK, ORDER_BY_NAME } from "./action-types";
 import axios from "axios";
 
 //Creo una función para obtener todos los pokemones:
@@ -79,6 +79,22 @@ export function filterTypes(payload){
 export function filterCreated(payload){
     return {
         type: FILTER_CREATED,
+        payload
+    }
+}
+
+//Ordenamiento alfabetico:
+export function orderByName(payload){
+    return {
+        type: ORDER_BY_NAME,
+        payload
+    }
+}
+
+//Ordenamiento por Nivel de Ataque:
+export function orderByAttack(payload){
+    return {
+        type: ORDER_BY_ATTACK,
         payload
     }
 }
