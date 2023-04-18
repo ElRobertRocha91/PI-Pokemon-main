@@ -1,4 +1,4 @@
-import { GET_DETAILS, GET_POKEMONS, GET_POKEMON_BY_NAME } from "./action-types";
+import { FILTER_TYPES, GET_DETAILS, GET_POKEMONS, GET_POKEMON_BY_NAME, GET_TYPES } from "./action-types";
 import axios from "axios";
 
 //Creo una función para obtener todos los pokemones:
@@ -49,5 +49,28 @@ export function getDetails(id){
         } catch (error) {
             console.log(error);
         }
+    }
+}
+
+//Para el filtrado por Tipos de Pokemon, en primer lugar vamos a obtenerlos:
+export function getTypes(){
+    return async function(dispatch){
+        try{
+            var json = await axios.get("http://localhost:3001/types");
+            return dispatch({
+                type: GET_TYPES,
+                payload: json.data
+            })
+        } catch (error) {
+            console.log(error);
+        }
+    }
+}
+
+//Luego los filtramos con su actions:
+export function filterTypes(payload){
+    return {
+        type: FILTER_TYPES,
+        payload
     }
 }
