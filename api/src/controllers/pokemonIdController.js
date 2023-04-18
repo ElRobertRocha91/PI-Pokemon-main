@@ -23,7 +23,7 @@ const getPokemonById = async (id) => {
                 id: dataPokemon.id,
                 name: dataPokemon.name,
                 image: dataPokemon.image,
-                types: dataPokemon.types.map((el) => el.name),
+                types: dataPokemon.types.map((el) => el.name).join(" - "),
                 live: dataPokemon.live,
                 attack: dataPokemon.attack,
                 defense: dataPokemon.defense,
