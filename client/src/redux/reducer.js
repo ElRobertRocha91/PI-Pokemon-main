@@ -1,4 +1,4 @@
-import { FILTER_TYPES, GET_DETAILS, GET_POKEMONS, GET_POKEMON_BY_NAME, GET_TYPES } from "./action-types";
+import { FILTER_CREATED, FILTER_TYPES, GET_DETAILS, GET_POKEMONS, GET_POKEMON_BY_NAME, GET_TYPES } from "./action-types";
 
 const initialState = {
     pokemons: [],
@@ -39,6 +39,15 @@ function rootReducer (state= initialState, action) {
             return {
                 ...state,
                 pokemons: filterByTypes
+            }
+        case FILTER_CREATED:
+            const all = state.copyPokemons;
+            const filtered = action.payload === "Created" ?
+            all.filter(el => el.createdInDb) :
+            all.filter(el => !el.createdInDb);
+            return {
+                ...state,
+                pokemons: action.payload === "All" ? all : filtered 
             }
         default:
             return {...state}

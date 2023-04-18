@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { filterTypes, getPokemons, getTypes } from "../../redux/actions";
+import { filterCreated, filterTypes, getPokemons, getTypes } from "../../redux/actions";
 import { Link } from "react-router-dom";
 import Card from "../card/Card";
 import Paginado from "../paginado/Paginado";
@@ -49,6 +49,12 @@ export default function Home(){
     }
     //-------------------------------------------//
 
+    //-Despacho la acción del filtrado APi o DB-//
+    function handleFilterCreated(e){
+        dispatch(filterCreated(e.target.value));
+    }
+    //------------------------------------------//
+
     return(
         <div>
             <Link to="/createPokemons">Create Pokemon</Link>
@@ -72,7 +78,7 @@ export default function Home(){
                         allTypes?.map(el => (<option key={el.id} value={el.name}>{el.name}</option>))
                     }
                 </select>
-                <select>
+                <select onChange={e => handleFilterCreated(e)}>
                     <option value="All">All</option>
                     <option value="Created">DB</option>
                     <option value="Existing">API</option>
