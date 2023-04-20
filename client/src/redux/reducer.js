@@ -1,4 +1,4 @@
-import { FILTER_CREATED, FILTER_TYPES, GET_DETAILS, GET_POKEMONS, GET_POKEMON_BY_NAME, GET_TYPES, ORDER_BY_ATTACK, ORDER_BY_NAME } from "./action-types";
+import { CREATE_POKEMON, FILTER_CREATED, FILTER_TYPES, GET_DETAILS, GET_POKEMONS, GET_POKEMON_BY_NAME, GET_TYPES, ORDER_BY_ATTACK, ORDER_BY_NAME } from "./action-types";
 
 const initialState = {
     pokemons: [],
@@ -112,6 +112,11 @@ function rootReducer (state= initialState, action) {
             return {
                 ...state,
                 pokemons: arrayAttack
+            }
+        case CREATE_POKEMON:
+            //El post solo retorna el estado como esta
+            return {
+                ...state
             }
         default:
             return {...state}

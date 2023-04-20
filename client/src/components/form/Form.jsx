@@ -2,11 +2,12 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { Link, useHistory }from "react-router-dom";
-import { getTypes } from "../../redux/actions";
+import { createPokemon, getTypes } from "../../redux/actions";
 
 export default function Form(){
     const dispatch = useDispatch();
     const types = useSelector((state) => state.types);
+    const history = useHistory();
 
     //Guardo el formulario en un estado, que sera un objeto:
     const [input, setInput] = useState({
@@ -56,8 +57,22 @@ export default function Form(){
         console.log(e.target.value);
         e.preventDefault();
         console.log(input);
-        dispatch();
-        setOrder(`${e.target.value}`);
+        dispatch(createPokemon(input));
+        alert("Pokemon created with success");
+        //Seteamos el <input>, para limpiarlo
+        setInput({
+            name: "",
+            image: "",
+            live: 0,
+            attack: 0,
+            defense: 0,
+            velocity: 0,
+            height: 0,
+            weight: 0,
+            types: []
+        })
+        //Redirijo a mi <Home>
+        history.push('/home');
     }
 
     return(
@@ -144,7 +159,7 @@ export default function Form(){
                     </label>
                 </div>
                 <div>
-                    <button type="submit">Create</button>
+                    <button type="submit" onSubmit={(e) => handleSubmit(e)}>Create</button>
                 </div>
             </form>
             <Link to='/home'>

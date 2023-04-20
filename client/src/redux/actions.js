@@ -98,3 +98,17 @@ export function orderByAttack(payload){
         payload
     }
 }
+
+//Función para crear el pokemon por <form>
+export function createPokemon(payload){
+    console.log(payload);
+    return async function(){
+        try {
+            const response = await axios.post("http://localhost:3001/pokemons", payload);
+            console.log(response);
+            return response;
+        } catch (error) {
+            console.log();
+        }
+    }
+}
