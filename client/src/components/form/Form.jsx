@@ -29,10 +29,10 @@ export default function Form(){
     //----------Logica del formulario-------------//
     //Función que recibira los cambios que haya en el <input> y modifique el estado global
     function handleInputChange(e){
-        console.log(e.target.value);
-        setInput({
+        //console.log(e.target.value);
+        setInput({//Setea el input en su estado y agregale lo que tenga la propiedad name del objeto <input> cuando reciba esa propiedad.
             ...input,
-            [e.target.value]: e.target.value
+            [e.target.name]: e.target.value
         })
         console.log(input);
     }
@@ -54,7 +54,7 @@ export default function Form(){
 
     //Función para confirmar el nuevo <pokemon> creado por el usuario
     function handleSubmit(e){
-        console.log(e.target.value);
+        //console.log(e.target.value);
         e.preventDefault();
         console.log(input);
         dispatch(createPokemon(input));
@@ -78,14 +78,14 @@ export default function Form(){
     return(
         <div>
             <h1>Create Pokemon..!!</h1>
-            <form>
+            <form onSubmit={(e) => handleSubmit(e)}>
                 <div>
                     <label>Name: </label>
                     <input
-                    placeholder="Ingresar name..."
-                    type="text"
-                    value={input.name}
-                    name="name"
+                    placeholder="Ingresar name..." 
+                    type="text" 
+                    value={input.name} 
+                    name="name" 
                     onChange={handleInputChange}/>
                 </div>
                 <div>
@@ -146,7 +146,7 @@ export default function Form(){
                 </div>
                 <div>
                     <label>Type: 
-                        <select onChange={(e) => handleSelectTypes}>
+                        <select onChange={(e) => handleSelectTypes(e)}>
                             <option value="all">All</option>
                             {/* Renderizado en el <select> de todos los tipos de polemon */}
                             {
@@ -156,10 +156,18 @@ export default function Form(){
                                 })
                             }
                         </select>
+                        <div>
+                            {/* Aqui vamos a mostrar los tipo de pokemon, que se van seleccionando */}
+                            {
+                                input.types.map((el) => (
+                                    <li key={el}>{el + " "}</li>          
+                                ))
+                            }
+                        </div>
                     </label>
                 </div>
                 <div>
-                    <button type="submit" onSubmit={(e) => handleSubmit(e)}>Create</button>
+                    <button type="submit">Create</button>
                 </div>
             </form>
             <Link to='/home'>
