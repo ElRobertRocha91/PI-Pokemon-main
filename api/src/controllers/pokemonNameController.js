@@ -1,5 +1,5 @@
 const { default: axios } = require("axios");
-//const { getAllPokemon } = require("./pokemonController");
+
 const { Pokemon, Type } = require("../db");
 const { Op } = require("sequelize");
 

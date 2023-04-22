@@ -1,6 +1,6 @@
 const { default: axios } = require("axios");
 const { Pokemon, Type } = require("../db");
-//const { getApiInfo } = require("./pokemonController");
+
 
 const getPokemonById = async (id) => {
     const dataId = id.includes("-");
