@@ -1,5 +1,6 @@
+const { default: axios } = require("axios");
 const { Pokemon, Type } = require("../db");
-const { getApiInfo } = require("./pokemonController");
+//const { getApiInfo } = require("./pokemonController");
 
 const getPokemonById = async (id) => {
     const dataId = id.includes("-");
@@ -34,10 +35,29 @@ const getPokemonById = async (id) => {
             }
             return infoPokemonDb;
         }else{
-            const infoApi = await getApiInfo();
+            //------Reutilizo el codigo de pokemoncontroller "Por el momento 40 pokemons "----///
+            // const infoApi = await getApiInfo();
 
-            const infoPokemonApi =  infoApi.find((el) => el.id.toString() === id);
-            //console.log(infoPokemonApi)==>Es un Objeto...!! Si usamos el Metodo Find()
+            // const infoPokemonApi =  infoApi.find((el) => el.id.toString() === id);
+            // //console.log(infoPokemonApi)==>Es un Objeto...!! Si usamos el Metodo Find()
+            // return infoPokemonApi;
+            //-------------------------------------------------------------------------------////
+            const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
+            //console.log(res);
+            const pokemonApi = res.data;
+            const infoPokemonApi = {
+                id: pokemonApi.id,
+                name: pokemonApi.name,
+                image: pokemonApi.sprites.front_default,
+                types: pokemonApi.types.map((el) => el.type.name).join(" - "),
+                live: pokemonApi.stats[0].base_stat,
+                attack: pokemonApi.stats[1].base_stat,
+                defense: pokemonApi.stats[2].base_stat,
+                velocity: pokemonApi.stats[5].base_stat,
+                height: pokemonApi.height,
+                weight: pokemonApi.weight,
+            }
+            //console.log(infoPokemonApi)
             return infoPokemonApi;
         }
     } catch (error) {
