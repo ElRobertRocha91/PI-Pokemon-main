@@ -7,15 +7,14 @@ export default function Detail(){
     return(
         <div className={style.container}>
             <div className={style.text}>
-            <h1>HELLO! WELCOME TO MY PROYECT-INDIVIDUAL</h1>
-            <div className={style.start}>
-                <p>Click on start</p>
-                <Link to='/home'>
-                   <button className={style.button}>START</button>
-                </Link>
+                <h1>HELLO! WELCOME TO MY PROYECT-INDIVIDUAL</h1>
+                <div className={style.start}>
+                    <p>Click on start</p>
+                    <Link to='/home'>
+                        <button className={style.button}>START</button>
+                    </Link>
+                </div>
             </div>
-            </div>
-            {/* <img className={style.image} src="https://images3.alphacoders.com/273/273289.jpg"/> */}
         </div>
     )
 }
