@@ -1,4 +1,8 @@
 body {
+  background-image: url("https://w0.peakpx.com/wallpaper/721/335/HD-wallpaper-pokemon-go-blue-emblem-blue-brickwall-pokemon-go-emblem-games-brands-pokemon-go-neon-emblem-pokemon-go.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',

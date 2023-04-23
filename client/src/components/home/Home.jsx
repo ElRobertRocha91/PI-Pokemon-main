@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import Card from "../card/Card";
 import Paginado from "../paginado/Paginado";
 import SearchBar from "../searchBar/SearchBar";
+import style from "./Home.module.css";
 
 //useSelector = Hooks que funciona igual que el mapStateToProps;
 //useDispatch = Hooks que funciona igual que el mapdispatchToProps;
@@ -76,9 +77,9 @@ export default function Home(){
 
     return(
         <div>
-            <Link to="/createPokemons">Create Pokemon</Link>
-            <h1>Pokedex App</h1>
-            <button onClick={e => {handleClick(e)}}>Cargar Pagina</button>
+            <Link to="/createPokemons">Create your Pokemon</Link>
+            <h1>POKEMON GO</h1>
+            <button onClick={e => {handleClick(e)}}>Home</button>
             <div>
                 <select onChange={e => handleSort(e)}>
                     <option value="Order-Letter">Order by letter</option>

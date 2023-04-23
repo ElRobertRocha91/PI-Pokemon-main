@@ -1,14 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import style from "./LandingPage.module.css";
 
 //Componente de función:
 export default function Detail(){
     return(
-        <div>
-            <h1>MY APP POKEMON</h1>
-            <Link to='/home'>
-                <button>ENTRY</button>
-            </Link>
+        <div className={style.container}>
+            <div className={style.text}>
+            <h1>HELLO! WELCOME TO MY PROYECT-INDIVIDUAL</h1>
+            <div className={style.start}>
+                <p>Click on start</p>
+                <Link to='/home'>
+                   <button className={style.button}>START</button>
+                </Link>
+            </div>
+            </div>
+            {/* <img className={style.image} src="https://images3.alphacoders.com/273/273289.jpg"/> */}
         </div>
     )
 }
