@@ -1,0 +1,32 @@
+.paginado{
+    margin: 4px 0;
+}
+
+.paginado ul{
+    list-style: none;
+}
+
+.paginado ul li{
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.paginado ul li button{
+    display: block;
+    padding: 3px 8px;
+    color: #fff;
+    text-shadow: -2px -2px 1px rgb(2, 130, 249), 2px 2px 1px  rgb(2, 130, 249), -2px 2px 1px rgb(2, 130, 249), 2px -2px 1px  rgb(2, 130, 249);
+    background: rgb(53, 201, 206);
+    border: 1px solid rgb(0, 21, 255);;
+    border-radius: 0.4em;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.paginado ul li button:hover{
+    text-shadow: 0 0 1rem rgb(0, 21, 255), 0 0 1rem rgb(0, 21, 255);
+    box-shadow: -2px -2px 1px rgb(2, 130, 249), 2px 2px 1px  rgb(2, 130, 249), -2px 2px 1px rgb(2, 130, 249), 2px -2px 1px  rgb(2, 130, 249);
+    transition-delay: 0.1s;
+    transform: scale(1.1);
+}
