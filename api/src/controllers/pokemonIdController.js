@@ -48,7 +48,7 @@ const getPokemonById = async (id) => {
             const infoPokemonApi = {
                 id: pokemonApi.id,
                 name: pokemonApi.name,
-                image: pokemonApi.sprites.front_default,
+                image: pokemonApi.sprites.other["official-artwork"].front_default,
                 types: pokemonApi.types.map((el) => el.type.name).join(" - "),
                 live: pokemonApi.stats[0].base_stat,
                 attack: pokemonApi.stats[1].base_stat,
