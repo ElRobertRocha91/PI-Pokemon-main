@@ -1,0 +1,56 @@
+.container{
+    width: 100%;
+    min-width: 100vh;
+    padding: 1%;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form input{
+    width: 50%;
+    min-width: 40vh;
+    background: #01e8f8;
+    font-family: 'Calibri';
+    font-size: 15px;
+    color: #fff;
+    border: 1px solid #fff;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 4px;
+    box-shadow: 0px 1px 10px  #fff9f9ea;
+    cursor: pointer;
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+.form input:hover{
+    box-shadow: 0 0 8px #faf9f9e3, 0 0 20px #faf9f9e3, 0 0 20px #faf9f9e3;
+    transition-delay: 0.1s;
+}
+
+.form button{
+    height: 28px;
+    padding: 4px;
+    font-size: 15px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    background: rgb(53, 201, 206);
+    color: #fff;
+    border: 1px solid rgb(0, 21, 255);
+    letter-spacing: 1px;
+    font-family: 'Calibri';
+    text-shadow: -2px -2px 1px rgb(2, 130, 249), 2px 2px 1px  rgb(2, 130, 249), -2px 2px 1px rgb(2, 130, 249), 2px -2px 1px  rgb(2, 130, 249);
+    cursor: pointer;
+    overflow: hidden;
+    transition: 0.4s;
+}
+
+form button:hover{
+    text-shadow: 0 0 1rem rgb(0, 21, 255), 0 0 1rem rgb(0, 21, 255);
+    box-shadow: -2px -2px 1px rgb(2, 130, 249), 2px 2px 1px  rgb(2, 130, 249), -2px 2px 1px rgb(2, 130, 249), 2px -2px 1px  rgb(2, 130, 249);
+    transition-delay: 0.1s;
+    transform: scale(0.9);
+}
