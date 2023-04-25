@@ -3,8 +3,8 @@ export default function Validation(input){
     let errors = {};
 
     //Valido
-    if(input.name.length  < 1 || input.name.length > 25){
-        errors.name = "Name must be between 1 and 25 characters";
+    if(input.name.length  < 4 || input.name.length > 25){
+        errors.name = "Name must be between 4 and 25 characters";
     }
     if(input.live < 1 || input.live > 275){
         errors.live = "Live must be between 1 and 275";
@@ -29,7 +29,7 @@ export default function Validation(input){
     }
     //En la validación de los types, va a tener un maxino de 2 y un minimo de 1
     if(input.types.length > 2 || input.types.length < 1){
-        errors.types = "Only must be between a max 2 and a min 1 type of pokemon";
+        errors.types = "Only a max 2 and a min 1";
     }
     return errors;
 }
