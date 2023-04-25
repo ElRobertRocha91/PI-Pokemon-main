@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Link, useHistory }from "react-router-dom";
 import { createPokemon, getTypes } from "../../redux/actions";
 import Validation from "./Validation";
+import style from "./Form.module.css";
 
 export default function Form(){
     const dispatch = useDispatch();
@@ -48,8 +49,20 @@ export default function Form(){
 
     //Función que recibira los tipos de pokemons seleccionados del <select>
     function handleSelectTypes(e){
-        //Valido que no puedan seleccionarse repetidos
-        if(!input.types.includes(e.target.value)){
+        //Valido que no puedan seleccionarse más de dos tipos, ni repetidos
+        if(input.types.length >= 2){
+            alert("You are only allowed to select a maximum of two...!");
+            setInput({
+                ...input
+            })
+        }
+        if(input.types.includes(e.target.value)){
+            alert("The type of pokemon is already selected...!");
+            setInput({
+                ...input
+            })
+        }else if(!input.types.includes(e.target.value)){
+            // alert("To add a new type delete one already selected")
             setInput({
                 ...input,
                 types: [...input.types, e.target.value]
@@ -59,7 +72,6 @@ export default function Form(){
                 types: [...input.types, e.target.value]
             }));
         }else{
-            //alert("The type of pokemon is already selected...!!!");
             setInput({
                 ...input
             });
@@ -98,9 +110,12 @@ export default function Form(){
     }
 
     return(
-        <div>
-            <h1>Create Pokemon..!!</h1>
-            <form onSubmit={(e) => handleSubmit(e)}>
+        <div className={style.container}>
+            <Link to='/home'>
+               <button className={style.button}>Home</button>
+            </Link>
+            <h1>Create your Pokemon</h1>
+            <form className={style.form} onSubmit={(e) => handleSubmit(e)}>
                 <div>
                     <label>Name: </label>
                     <input
@@ -110,7 +125,7 @@ export default function Form(){
                     name="name" 
                     onChange={handleInputChange}/>
                     {/* Renderizo en un condicional el error*/}
-                    {errors.name && <p>{errors.name}</p>}
+                    {errors.name && <p className={style.error}>{errors.name}</p>}
                 </div>
                 <div>
                     <label>Live: </label>
@@ -119,7 +134,7 @@ export default function Form(){
                     value={input.live}
                     name="live"
                     onChange={handleInputChange}/>
-                    {errors.live && <p>{errors.live}</p>}
+                    {errors.live && <p className={style.error}>{errors.live}</p>}
                 </div>
                 <div>
                     <label>Attack: </label>
@@ -128,7 +143,7 @@ export default function Form(){
                     value={input.attack}
                     name="attack"
                     onChange={handleInputChange}/>
-                    {errors.attack && <p>{errors.attack}</p>}
+                    {errors.attack && <p className={style.error}>{errors.attack}</p>}
                 </div>
                 <div>
                     <label>Defense: </label>
@@ -137,7 +152,7 @@ export default function Form(){
                     value={input.defense}
                     name="defense"
                     onChange={handleInputChange}/>
-                    {errors.defense && <p>{errors.defense}</p>}
+                    {errors.defense && <p className={style.error}>{errors.defense}</p>}
                 </div>
                 <div>
                     <label>Velocity: </label>
@@ -146,7 +161,7 @@ export default function Form(){
                     value={input.velocity}
                     name="velocity"
                     onChange={handleInputChange}/>
-                    {errors.velocity && <p>{errors.velocity}</p>}
+                    {errors.velocity && <p className={style.error}>{errors.velocity}</p>}
                 </div>
                 <div>
                     <label>Height: </label>
@@ -155,7 +170,7 @@ export default function Form(){
                     value={input.height}
                     name="height"
                     onChange={handleInputChange}/>
-                    {errors.height && <p>{errors.height}</p>}
+                    {errors.height && <p className={style.error}>{errors.height}</p>}
                 </div>
                 <div>
                     <label>Weight: </label>
@@ -164,7 +179,7 @@ export default function Form(){
                     value={input.weight}
                     name="weight"
                     onChange={handleInputChange}/>
-                    {errors.weight && <p>{errors.weight}</p>}
+                    {errors.weight && <p className={style.error}>{errors.weight}</p>}
                 </div>
                 <div>
                     <label>Image: </label>
@@ -173,10 +188,10 @@ export default function Form(){
                     value={input.image}
                     name="image"
                     onChange={handleInputChange}/>
-                    {errors.image && <p>{errors.image}</p>}
+                    {errors.image && <p className={style.error}>{errors.image}</p>}
                 </div>
                 <div>
-                    <label>Type: 
+                    <h6>Type: 
                         <select onChange={(e) => handleSelectTypes(e)}>
                             <option value="all">All</option>
                             {/* Renderizado en el <select> de todos los tipos de pokemon */}
@@ -187,24 +202,26 @@ export default function Form(){
                                 })
                             }
                         </select>
-                        {errors.types && <p>{errors.types}</p>}
-                        <div>
+                        {errors.types && <p className={style.error}>{errors.types}</p>}
+                        <div className={style.column}>
                             {/* Aqui vamos a mostrar los tipo de pokemon, que se van seleccionando */}
                             {
                                 input.types.map((el) => (
-                                    <li key={el}>{el + " "}<button type="button" onClick={() => handleDeleteTypes(el)}>x</button></li>                                            
-                                ))
+                                    <li className={style.li} key={el}>
+                                        <div className={style.lista}>
+                                            {el + " "}<button className={style.x} type="button" onClick={() => handleDeleteTypes(el)}>x</button>
+                                        </div>
+                                    </li>                                            
+                                ))  
                             }
                         </div>
-                    </label>
+                    </h6>
                 </div>
                 <div>
-                    <button type="submit">Create</button>
+                    {errors.name || errors.live || errors.attack || errors.defense || errors.image || errors.types ?
+                    null : <button className={style.create} type="submit">Create</button>}
                 </div>
             </form>
-            <Link to='/home'>
-               <button>Home</button>
-            </Link>
         </div>
     )
 }
