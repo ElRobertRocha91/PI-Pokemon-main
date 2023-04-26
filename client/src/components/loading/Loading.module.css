@@ -1,0 +1,53 @@
+.container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*Establecemos una añtura minima y centramos*/
+    min-height: 100vh;
+    background-color: black;
+}
+
+.container .loader {
+    width: 100px;
+    height: 100px;
+    border: solid 5px #064555;
+    /*Le decimos a la parte superior que sea de un tono mas claro*/
+    border-top: solid 5px #7cd6ec;
+    /*Establecemos la circularidad para que adopte una forma circular*/
+    border-radius: 50%;
+    /*Definimos la animación, el tiempo y forma*/
+    animation:  loader .8s linear infinite;
+}
+
+/*Establecemos la animación 2D del div loader*/
+@keyframes loader {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/*Ahora establecemos el message*/
+.container .message {
+     /*Le agremamos esta posición para poder manejarlo como nosotros queramos*/
+    position: absolute;
+    color: #7cd6ec;
+    /*Lo movemos hacia arriba y luego a la izquierda*/
+    top: 50%;
+    left: 50%;
+    /*Por ultimo lo centramos usando el traslate de animation 2D en eje X y EjeY*/
+    transform: translate(-50%, -50%);
+    animation: message 1s alternate infinite ease-in-out;
+}
+
+@keyframes message {
+    0% {
+        opacity: .2;
+    }
+    100% {
+        opacity: 1;
+    }
+}

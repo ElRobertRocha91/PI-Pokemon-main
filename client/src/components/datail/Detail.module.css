@@ -1,0 +1,105 @@
+.container{
+    margin-top: 0px;
+    position: relative;
+    top: 0%;
+    bottom: 0%
+}
+
+.detail{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    /* border: solid 1px rgb(0, 21, 255); */
+    border-radius: 10px;
+    margin-block-start: 0em;
+}
+
+.card{
+    color: #fff;
+    font-family: 'Calibri';
+    text-shadow: -2px -2px 1px rgb(2, 130, 249), 2px 2px 1px  rgb(2, 130, 249), -2px 2px 1px rgb(2, 130, 249), 2px -2px 1px  rgb(2, 130, 249);
+    background-color: rgb(53, 201, 206);
+    border-radius: 10px; 
+    border: solid 2px rgb(208, 211, 242), solid 3px rgb(3, 239, 247);
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 1px 5px 10px rgb(53, 201, 206), 1px 5px 10px rgb(53, 201, 206), -1px -5px 12px rgb(53, 201, 206), 0px -5px 10px rgb(53, 201, 206);
+    transition: 1.5s;
+}
+
+.card:hover{
+    text-shadow: 0 0 1rem rgb(0, 21, 255), 0 0 1rem rgb(0, 21, 255);
+    box-shadow: -2px -2px 1px rgb(2, 130, 249), 2px 2px 1px  rgb(2, 130, 249), -2px 2px 1px rgb(2, 130, 249), 2px -2px 1px  rgb(2, 130, 249);
+    transition-delay: 0.3s;
+}
+
+.card h2{
+    font-weight: 600;
+    padding-bottom: 12px;
+    font-size: 25px;
+}
+.id{
+    margin: 25px 0 0 15px;
+    letter-spacing: 1.7px;
+    font-size: 15px;
+}
+
+.parrafos{
+    letter-spacing: 1.7px;
+    font-size: 15px;
+    column-count: 2;
+    column-gap: 10px;
+    padding: 15px 15px 25px 25px;
+    padding-left: 20px;
+    justify-content: center;
+}
+
+span{
+    font-weight: 600;
+    font-style: normal;
+}
+
+.card img{
+    width: 15%;
+    max-height: 100px;
+    min-height: 100px;
+    max-width: 100px;
+    min-width: 100px; 
+    transition: .8s;
+}
+
+.card img:hover{
+    transform: scale(0.9);
+}
+
+p{
+    margin-block-start: 0em;
+}
+
+.container div button{
+    margin-top: 1px;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 15px;
+    background: rgb(53, 201, 206);
+    border: 1px solid rgb(0, 21, 255);
+    height: 28px;
+    letter-spacing: 1px;
+    font-family: 'Calibri';
+    text-shadow: -2px -2px 1px rgb(2, 130, 249), 2px 2px 1px  rgb(2, 130, 249), -2px 2px 1px rgb(2, 130, 249), 2px -2px 1px  rgb(2, 130, 249);
+    cursor: pointer;
+    overflow: hidden;
+    transition: 0.4s;
+}
+
+.container div button:hover{
+    text-shadow: 0 0 1rem rgb(0, 21, 255), 0 0 1rem rgb(0, 21, 255);
+    box-shadow: -2px -2px 1px rgb(2, 130, 249), 2px 2px 1px  rgb(2, 130, 249), -2px 2px 1px rgb(2, 130, 249), 2px -2px 1px  rgb(2, 130, 249);
+    transition-delay: 0.1s;
+    transform: scale(0.9);
+}

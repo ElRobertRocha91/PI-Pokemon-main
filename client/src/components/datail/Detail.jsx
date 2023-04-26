@@ -1,11 +1,14 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getDetails } from "../../redux/actions";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import style from "./Detail.module.css";
+import Loading from "../loading/Loading";
 
 export default function Detail(){
 
+    const [loading, setLoading] = useState(true);
     const dispatch = useDispatch();
     const { id } = useParams();
 
@@ -15,21 +18,31 @@ export default function Detail(){
 
     const myPokemon = useSelector((state) => state.detail);
 
+    console.log(myPokemon);
+    //Uso el metodo estatico Object.keys(), para saber si el array devuelto tiene las propiedades que van a ser renderizadas
+    if(Object.keys(myPokemon).length > 0 && loading){
+        setLoading(false);
+    }
+
     return(
         <div>
-            <Link to="/home">
-               <button>Return</button>
-            </Link>
+            {Object.keys(myPokemon).length > 0 && !loading ?
+            <div className={style.container}>
+            <div>
+                <Link to="/home">
+                   <button>HOME</button>
+                </Link>
+            </div>
             <div>
                 {/* Detallado del Pokemon */}
                 {
                     myPokemon ?
-                    <div>
-                        <article>
-                            <p><span>Id:</span>{myPokemon.id}</p>
+                    <div className={style.detail}>
+                        <article className={style.card}>
+                            <p className={style.id}><span>Id:</span>{myPokemon.id}</p>
                             <img src={myPokemon.image} alt="image"/>
                             <h2>{myPokemon.name}</h2>
-                            <div>
+                            <div className={style.parrafos}>
                                 <p><span>Live: </span>{myPokemon.live}</p>
                                 <p><span>Attack: </span>{myPokemon.attack}</p>
                                 <p><span>Defense: </span>{myPokemon.defense}</p>
@@ -43,6 +56,8 @@ export default function Detail(){
                     <p>Loanding...</p>
                 }
             </div>
+            </div> : <Loading/>
+            }
         </div>
     )
 }

@@ -1,3 +1,88 @@
-/* body{
-    background-image: url("https://images7.alphacoders.com/661/661986.jpg");
-} */
+.conteiner{
+    margin-top: 3vh;
+}
+
+.cards{
+    justify-content: space-around;
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: center; */
+}
+
+.li{
+    list-style-type: none;
+}
+
+.title{
+    color: #fff;
+    text-shadow: -2px -2px 1px rgb(2, 130, 249), 2px 2px 1px  rgb(2, 130, 249), -2px 2px 1px rgb(2, 130, 249), 2px -2px 1px  rgb(2, 130, 249);
+    border-bottom: 1px solid rgb(0, 21, 255);
+    background: #24303c;
+}
+
+.title h1{
+    margin-top: 0%;
+    margin-bottom: 0%;
+    font-family: 'Calibri';
+    letter-spacing: 1px;
+}
+
+.button{
+    margin-top: 25px;
+    margin-bottom: 20px;
+    margin-right: 30px;
+    margin-left: 30px;
+    font-size: 17px;
+    font-family: 'Calibri';
+    letter-spacing: 1px;
+    padding: 5px 10px;
+    color: #fff;
+    text-shadow: -2px -2px 1px rgb(2, 130, 249), 2px 2px 1px  rgb(2, 130, 249), -2px 2px 1px rgb(2, 130, 249), 2px -2px 1px  rgb(2, 130, 249);
+    background: rgb(53, 201, 206);
+    border: 1px solid rgb(0, 21, 255);
+    border-radius: 15px;
+    box-shadow: 0 0 1.2rem rgb(2, 160, 252);
+    /* box-shadow: 0 0 1.2rem rgb(2, 160, 252), 0 0 1.1rem rgb(2, 160, 252), 0 0 1.2rem rgb(2, 160, 252); */
+    cursor: pointer;
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+.button:hover{
+    /* text-shadow: 0 0 1rem rgb(0, 21, 255), 0 0 1rem rgb(0, 21, 255);
+    /* box-shadow: -2px -2px 1px rgb(2, 130, 249), 2px 2px 1px  rgb(2, 130, 249), -2px 2px 1px rgb(2, 130, 249), 2px -2px 1px  rgb(2, 130, 249); */
+    /* transition-delay: 0.9s;
+     box-shadow: 0 0 1.2rem rgb(2, 160, 252), 0 0 1.1rem rgb(2, 160, 252), 0 0 1.2rem rgb(2, 160, 252);
+     */ 
+     /* transform: scale(0.9); */
+     text-shadow: 0 0 1rem rgb(0, 21, 255), 0 0 1rem rgb(0, 21, 255);
+    box-shadow: -2px -2px 1px rgb(2, 130, 249), 2px 2px 1px  rgb(2, 130, 249), -2px 2px 1px rgb(2, 130, 249), 2px -2px 1px  rgb(2, 130, 249);
+    transition-delay: 0.1s;
+}
+
+.link{
+    text-decoration: none;
+    color: #fff;
+}
+
+.select{
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 12px;
+    padding: 1px;
+    font-size: 12px;
+    font-family: 'Calibri';
+    background: #24303c;
+    color: #fff;
+    box-shadow: 0px 1px 10px  #fff9f9ea;
+    width: 15%;
+    transition: 0.3s;
+}
+.select:hover{
+    box-shadow: 0 0 8px #faf9f9e3, 0 0 20px #faf9f9e3, 0 0 20px #faf9f9e3;
+    transition-delay: 0.1s;
+}
