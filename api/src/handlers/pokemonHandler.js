@@ -14,7 +14,7 @@ const getPokemon = async (req, res) => {
             res.status(200).json(allPokemon);
         }
     } catch (error) {
-        //res.status(400).send(error.message);
+        res.status(400).json({msg: "Pokemon not found"});
         console.log("Pokemons not found", error)
     }
 }
