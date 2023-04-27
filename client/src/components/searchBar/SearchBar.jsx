@@ -22,8 +22,12 @@ export default function SearchBar(){
     //Logica del Button:
     function handleSubmit(e){
         e.preventDefault();
+        //let isValid = new RegExp('/^[A-Z]+$/', 'i');Expresion Regular
         if(!name){
-            return alert("Please input a name to start the search");
+            alert("Please input a name to start the search..!!")
+        }else if(name && !/^[A-Z]+$/i.test(name)){//Si name existe y tiene caracteres diferentes a los permitidos
+            alert("Invalid characters, please enter only letters of the Latin alphabet..!!");
+            setName("");
         }else{
             dispatch(getPokemonByName(name));
             setName("");
