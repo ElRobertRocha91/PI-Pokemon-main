@@ -4,21 +4,27 @@ import axios from "axios";
 //Creo una función para obtener todos los pokemones:
 export function getPokemons(){
     return async function(dispatch){
-        //----Axios----
-        var json = await axios.get("http://localhost:3001/pokemons");
-        return dispatch({
-            type: GET_POKEMONS,
-            payload: json.data
-        })
-        //----Fetch----
-        // fetch("http://localhost:3001/pokemons");
-        // .then(response => response.json());
-        // .then(data => {
-        //     return dispatch({
-        //         type:GET_POKEMONS,
-        //         payload: data
-        //     })
-        // })
+        try {
+            //----Axios----
+            var json = await axios.get("http://localhost:3001/pokemons");
+            return dispatch({
+                type: GET_POKEMONS,
+                payload: json.data
+            })
+            //----Fetch----
+            // fetch("http://localhost:3001/pokemons");
+            // .then(response => response.json());
+            // .then(data => {
+            //     return dispatch({
+            //         type:GET_POKEMONS,
+            //         payload: data
+            //     })
+            // })
+            // .catch((error) => data.msg);
+        } catch (error) {
+            alert(json.data.msg);
+            console.log(error);
+        }
     }
 }
 
@@ -106,6 +112,7 @@ export function createPokemon(payload){
         try {
             const response = await axios.post("http://localhost:3001/pokemons", payload);
             console.log(response);
+            alert(response.data.msg)
             return response;
         } catch (error) {
             console.log();
