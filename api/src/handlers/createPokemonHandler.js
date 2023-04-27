@@ -26,7 +26,7 @@ const createPokemon = async (req, res) => {
         })
         //console.log(foundDB)
         if(foundDB.length != 0){
-            return res.send("Ya existe el Pokemon con ese nombre");
+            return res.json({ msg: "Ya existe el Pokemon con ese nombre"});
         }
         //Valido si ya existe en la API
         const allPokemons = await getApiInfo();
@@ -55,13 +55,13 @@ const createPokemon = async (req, res) => {
 
             newPokemon.addTypes(typesDB);
 
-            res.status(200).send("El nuevo Pokemon se creo exitosamente");
+            res.status(200).json({msg: "Pokemon created with success"});
         }else{
-            res.status(404).send("Ya existe un Pokemon con ese nombre");
+            res.status(404).json({msg: "Ya existe un Pokemon con ese nombre"});
         }
     } catch (error) {
         console.log(error);
-        res.status(404).send(error.message);
+        res.status(404).json({error: error.message});
     }
 }
 
