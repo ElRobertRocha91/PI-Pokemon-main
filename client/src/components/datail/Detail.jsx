@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import style from "./Detail.module.css";
 import Loading from "../loading/Loading";
+import Error from "../error404/Error";
 
 export default function Detail(){
 
@@ -53,7 +54,7 @@ export default function Detail(){
                             </div>
                         </article>
                     </div> : 
-                    <p>Loanding...</p>
+                    <Error/>
                 }
             </div>
             </div> : <Loading/>
