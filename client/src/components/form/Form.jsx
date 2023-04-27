@@ -61,7 +61,8 @@ export default function Form(){
             setInput({
                 ...input
             })
-        }else if(!input.types.includes(e.target.value)){
+        }
+        if(!input.types.includes(e.target.value) && input.types.length < 2){
             // alert("To add a new type delete one already selected")
             setInput({
                 ...input,
@@ -69,7 +70,7 @@ export default function Form(){
             });
             setErrors(Validation({
                 ...input,
-                types: [...input.types, e.target.value]
+                // types: [...input.types, e.target.value]
             }));
         }else{
             setInput({
@@ -92,7 +93,7 @@ export default function Form(){
         e.preventDefault();
         console.log(input);
         dispatch(createPokemon(input));
-        alert("Pokemon created with success");
+        //alert("Pokemon created with success");
         //Seteamos el <input>, para limpiarlo
         setInput({
             name: "",
