@@ -82,13 +82,14 @@ p{
 }
 
 .container div button{
-    margin-top: 1px;
+    margin-top: 2px;
     color: #fff;
     border-radius: 10px;
     font-size: 15px;
     background: rgb(53, 201, 206);
     border: 1px solid rgb(0, 21, 255);
-    height: 28px;
+    height: 30px;
+    width: 60px;
     letter-spacing: 1px;
     font-family: 'Calibri';
     text-shadow: -2px -2px 1px rgb(2, 130, 249), 2px 2px 1px  rgb(2, 130, 249), -2px 2px 1px rgb(2, 130, 249), 2px -2px 1px  rgb(2, 130, 249);
