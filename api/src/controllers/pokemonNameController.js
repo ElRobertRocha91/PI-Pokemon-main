@@ -44,7 +44,7 @@ const getPokemonByName = async (name) => {
             const pokemonByName = {
                 id: pokeData.id,
                 name: pokeData.name,
-                image: pokeData.sprites.front_default,
+                image: pokeData.sprites.other["official-artwork"].front_default,
                 types: pokeData.types.map((el) => el.type.name).join(" - "),
                 live: pokeData.stats[0].base_stat,
                 attack: pokeData.stats[1].base_stat,
