@@ -8,9 +8,15 @@
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(3, 1fr);
+    margin-left: 50px;
     /* display: flex;
     flex-wrap: wrap;
     justify-content: center; */
+    /* display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-content: center;
+    margin-left: 50px;
+    height: 100vh; */
 }
 
 .li{
@@ -29,6 +35,11 @@
     margin-bottom: 0%;
     font-family: 'Calibri';
     letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.title h1:hover{
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6, 0 0 25px #0073e6, 0 0 30px #0073e6; 
 }
 
 .button{
