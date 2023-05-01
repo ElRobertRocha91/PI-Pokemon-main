@@ -12,6 +12,7 @@ module.exports = (sequelize) => {
     name: {//Nombre
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true, //Restricción STRING UNIQUE: el nombre de Pokemon será unico, arrojara error si se intenta insertar un nombre que ya existe.
     },
     image: {//Imagen
       type: DataTypes.TEXT,
@@ -19,27 +20,48 @@ module.exports = (sequelize) => {
     },
     live: {//Vida
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
+      validate:{
+        min: 1,
+        max: 275
+      }
     },
     attack: {//Ataque
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
+      validate:{
+        min: 1,
+        max: 275
+      }
     },
     defense: {//Defensa
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
+      validate:{
+        min: 1,
+        max: 275
+      }
     },
     velocity: {//Velocidad
       type: DataTypes.INTEGER,
-      defaultValue: 0
+      defaultValue: 0,
+      validate: {
+        max: 275
+      }
     },
     height: {//Altura
       type: DataTypes.INTEGER,
-      defaultValue: 0
+      defaultValue: 0,
+      validate: {
+        max: 275
+      }
     },
     weight: {//Peso
       type: DataTypes.INTEGER,
-      defaultValue: 0
+      defaultValue: 0,
+      validate: {
+        max: 275
+      }
     },
     createdInDb: {
       type: DataTypes.BOOLEAN,
