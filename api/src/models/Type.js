@@ -8,7 +8,28 @@ module.exports = (sequelize) => {
         defaultValue: DataTypes.UUIDV4
     },
     name: {
-        type: DataTypes.STRING,
+        type: DataTypes.ENUM(
+          'fighting',
+          'normal',
+          'ground',
+          'flying',
+          'poison',
+          'bug',
+          'fire',
+          'steel',
+          'ghost',
+          'rock',
+          'water',
+          'grass',
+          'ice',
+          'psychic',
+          'dark',
+          'fairy',
+          'electric',
+          'dragon',
+          'shadow',
+          'unknown'
+        ),
         allowNull: false
     }
   }, {
