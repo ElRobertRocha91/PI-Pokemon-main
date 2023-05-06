@@ -3,8 +3,8 @@ export default function Validation(input){
     let errors = {};
 
     //Valido
-    if(input.name.length  < 4 || input.name.length > 25){
-        errors.name = "Name must be between 4 and 25 characters";
+    if(!/^[ a-zA-Z ]+$/.test(input.name) || input.name.length  < 4 || input.name.length > 25){
+        errors.name = "Name must be between only letters and an max 25 characters";
     }
     if(input.live < 1 || input.live > 275){
         errors.live = "Live must be between 1 and 275";
@@ -28,8 +28,13 @@ export default function Validation(input){
         errors.image = "Image invalid";
     }
     //En la validación de los types, va a tener un maxino de 2 y un minimo de 1
-    if(input.types.length > 2 || input.types.length < 1){
-        errors.types = "Only a max 2 and a min 1";
+    if(input.types){
+        if(!input.types.length || input.types.length > 2){
+            errors.types = "need at least one type";
+        }else{
+            errors.types = false;
+        }
     }
+    
     return errors;
 }
