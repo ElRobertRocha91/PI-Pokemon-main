@@ -16,7 +16,7 @@ const createPokemon = async (req, res) => {
         } = req.body;
 
         if(!name || !image || !live || !attack || !defense || !types){
-            throw new Error("Faltan completar campos obligarorios");
+            res.status(404).json({msg: "Faltan completar campos obligarorios"});
         }
         //Valido si ya existe ese Pokemon en mi DATABASE
         const foundDB = await Pokemon.findAll({
@@ -61,7 +61,7 @@ const createPokemon = async (req, res) => {
         }
     } catch (error) {
         console.log(error);
-        res.status(404).json({error: error.message});
+        //res.status(404).json({error});
     }
 }
 
