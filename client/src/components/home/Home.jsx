@@ -8,6 +8,7 @@ import Paginado from "../paginado/Paginado";
 import SearchBar from "../searchBar/SearchBar";
 import style from "./Home.module.css";
 import Loading from "../loading/Loading";
+import NavBar from "../navBar/NavBar";
 
 //useSelector = Hooks que funciona igual que el mapStateToProps;
 //useDispatch = Hooks que funciona igual que el mapdispatchToProps;
@@ -90,9 +91,8 @@ export default function Home(){
             {/* Aplico un ternario para aplicar el Loading, midiendo si me llego la info con los pokemon en mi estado local */}
             {Object.keys(all).length > 0 ? 
             (<div>
-            <div className={style.title}>
-                <h1>POKEMON GO</h1>
-            </div>
+            {/* Aqui renderizamos nuestra navbar */}
+            <NavBar/>
             <div>
             <button onClick={e => {handleClick(e)}} className={style.button}>Clean Page</button>
             <button className={style.button}><Link to="/createPokemons" className={style.link}>Create Pokemon</Link></button>

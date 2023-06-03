@@ -1,0 +1,32 @@
+.header .title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title{
+    color: #fff;
+    text-shadow: -2px -2px 1px rgb(2, 130, 249), 2px 2px 1px  rgb(2, 130, 249), -2px 2px 1px rgb(2, 130, 249), 2px -2px 1px  rgb(2, 130, 249);
+    border-bottom: 1px solid rgb(0, 21, 255);
+    background: #24303c;
+    
+}
+
+.title h1{
+    margin-top: 0%;
+    margin-bottom: 0%;
+    margin-left: 25px;
+    font-family: 'Calibri';
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.title h1:hover{
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6, 0 0 25px #0073e6, 0 0 30px #0073e6; 
+}
+
+.ul li a{
+    color: #AAA;
+    text-decoration: none;
+    margin-right: 20px;
+}
