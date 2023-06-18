@@ -1,10 +1,11 @@
-import { CREATE_POKEMON, FILTER_CREATED, FILTER_TYPES, GET_DETAILS, GET_POKEMONS, GET_POKEMON_BY_NAME, GET_TYPES, ORDER_BY_ATTACK, ORDER_BY_NAME } from "./action-types";
+import { ADD_FAVORITE, CREATE_POKEMON, DELETE_FAVORITE, FILTER_CREATED, FILTER_TYPES, GET_DETAILS, GET_POKEMONS, GET_POKEMON_BY_NAME, GET_TYPES, ORDER_BY_ATTACK, ORDER_BY_NAME } from "./action-types";
 
 const initialState = {
     pokemons: [],
     copyPokemons: [],
     detail: [],
-    types: []
+    types: [],
+    myFavorites: []
 }
 
 function rootReducer (state= initialState, action) {
@@ -117,6 +118,16 @@ function rootReducer (state= initialState, action) {
             //El post solo retorna el estado como esta
             return {
                 ...state
+            }
+        case ADD_FAVORITE:
+            return {
+                state,
+                myFavorites: [...state.myFavorites, action.payload]
+            }
+        case DELETE_FAVORITE:
+            return {
+                ...state,
+                myFavorites: state.myFavorites.filter(pokemon => pokemon.id !== action.payload)
             }
         default:
             return {...state}

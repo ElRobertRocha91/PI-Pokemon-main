@@ -1,4 +1,4 @@
-import { FILTER_CREATED, FILTER_TYPES, GET_DETAILS, GET_POKEMONS, GET_POKEMON_BY_NAME, GET_TYPES, ORDER_BY_ATTACK, ORDER_BY_NAME } from "./action-types";
+import { ADD_FAVORITE, DELETE_FAVORITE, FILTER_CREATED, FILTER_TYPES, GET_DETAILS, GET_POKEMONS, GET_POKEMON_BY_NAME, GET_TYPES, ORDER_BY_ATTACK, ORDER_BY_NAME } from "./action-types";
 import axios from "axios";
 
 //Creo una función para obtener todos los pokemones:
@@ -116,7 +116,24 @@ export function createPokemon(payload){
             alert(response.data.msg)
             return response;
         } catch (error) {
-            console.log();
+            alert(error.response.data.msg)
+            console.log(error);
         }
+    }
+}
+
+//Función para agregar a la lista de favoritos
+export function addFavorite(pokemon){
+    return {
+        type: ADD_FAVORITE,
+        payload: pokemon
+    }
+}
+
+//Función para remover de la lista de favoritos
+export function deleteFavorite(id){
+    return {
+        type: DELETE_FAVORITE,
+        payload: id
     }
 }
