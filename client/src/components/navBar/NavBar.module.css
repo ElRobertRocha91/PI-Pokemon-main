@@ -25,8 +25,19 @@
     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6, 0 0 25px #0073e6, 0 0 30px #0073e6; 
 }
 
-.ul li a{
-    color: #AAA;
+.ul{
     text-decoration: none;
-    margin-right: 20px;
+    list-style: none;
+}
+
+.ul li a{
+    color: #fff;
+    text-decoration: none;
+    text-shadow: none;
+    list-style: none;
+    margin-right: 50px;
+}
+
+.ul li a:hover{
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff
 }

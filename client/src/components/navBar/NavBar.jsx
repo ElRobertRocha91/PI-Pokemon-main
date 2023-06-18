@@ -5,8 +5,8 @@ import style from "./NavBar.module.css";
 export default function NavBar(){
     return(
         <header className={style.header}>
-            <div className={style.title}>
-                <h1>Pokemon Go</h1>
+            <div className={style.title}> 
+                <h1>Pokémon Go</h1>
                 <nav>
                     <ul className={style.ul}>
                         <li>
