@@ -62,7 +62,7 @@ export default function Form(){
                 ...input
             })
         }
-        if(!input.types.includes(e.target.value) && input.types.length < 2){
+        if(!input.types.includes(e.target.value) && e.target.value !== 'all' && input.types.length < 2){
             // alert("To add a new type delete one already selected")
             setInput({
                 ...input,
