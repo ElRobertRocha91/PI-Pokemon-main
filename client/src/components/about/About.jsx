@@ -8,10 +8,9 @@ export default function About(){
     return(
         <div>
             <NavBar/>
-            <div classNane={style.container}>
-            
+            <div classNane={style.container}> 
             <p>
-                Hola, ¿como estas?. Espero que bien, bueno me presento, soy Roberto Rocha. Este proyecto con tmática Pokémon,
+                Hola, ¿como estas?. Espero que bien, bueno me presento, soy Roberto Rocha. Este proyecto con temática Pokémon,
                 lo desarrolle para un proyecto individual en el Bootcamp Henry.
                 Primero que nada, agradezco a la comunidad por ayudarme, dar consejos y por las
                 oportunidades para seguir aprendiendo nuevos conocimientos.
@@ -112,7 +111,6 @@ export default function About(){
                 </a>
             </div>
         </div>
-    </div>
-        
+    </div>      
     )
 }
