@@ -8,9 +8,9 @@ export default function About(){
     return(
         <div>
             <NavBar/>
-            <div classNane={style.container}> 
+            <div className={style.container}> 
             <p>
-                Hola, ¿como estas?. Espero que bien, bueno me presento, soy Roberto Rocha. Este proyecto con temática Pokémon,
+                Hola, ¿como estas?. Espero que bien, bueno me presento, soy Roberto Rocha, Full Stack Web Developer. Este proyecto con temática Pokémon,
                 lo desarrolle para un proyecto individual en el Bootcamp Henry.
                 Primero que nada, agradezco a la comunidad por ayudarme, dar consejos y por las
                 oportunidades para seguir aprendiendo nuevos conocimientos.
@@ -32,6 +32,13 @@ export default function About(){
                     src="https://raw.githubusercontent.com/reduxjs/redux/master/logo/logo.png"
                     alt="Redux"
                     />
+                </li>
+                <li>
+                    Node{" "}
+                    <img
+                    className={style.image}
+                    src="https://w7.pngwing.com/pngs/117/744/png-transparent-node-js-javascript-express-js-software-developer-react-network-code-angle-text-rectangle-thumbnail.png"
+                    alt="Node"/>
                 </li>
                 <li>
                     Express{" "}
@@ -84,7 +91,7 @@ export default function About(){
             </ul>
             <p>
                 Este proyecto se basa en la posibilidad desde el lado del cliente
-                en buscar pokemones que existan, filtrar por lo que desee y tambien porder crearlos.
+                en buscar pokemones que existan, filtrar por lo que desee y tambien poder crearlos.
             </p>
             <span>
                 Muchas Gracias por tu tiempo en leer y visitar mi App Pokémon Go.

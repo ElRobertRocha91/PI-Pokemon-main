@@ -1,0 +1,38 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background: #24303c;
+    color: #fff;
+    border-radius: 15px;
+    text-align: start;
+    font-family: 'Calibri';
+    font-size: 15px;
+    margin-left: 25%;
+    margin-right: 10px;
+    margin-top: 10px;
+    padding: 20px;
+    width: 50%;
+    justify-content: center;
+    align-self: center;
+  }
+
+  .container1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .image{
+    width: 3vh;
+  }
+  .img{
+    width: 20%;
+    margin: 10px;
+    margin-left: 100px;
+  }
+  .list li{
+    text-decoration: none;
+    /* list-style: none; */
+    margin-left: 20px;
+  }
