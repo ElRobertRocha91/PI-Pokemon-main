@@ -7,7 +7,6 @@ import Detail from './components/datail/Detail';
 import Form from './components/form/Form';
 import Error from './components/error404/Error';
 import About from './components/about/About';
-import Favorites from './components/favorite/Favorite';
 
 //Switch => Solo va a machear las rutas que existan
 
@@ -21,7 +20,6 @@ function App() {
         <Route path='/detail/:id' component={Detail}/>
         <Route path='/createPokemons' component={Form}/>
         <Route path='/about' component={About}/>
-        <Route path='/favorites' component={Favorites}/>
         <Route path='*' component={Error}/>
       </Switch>
     </div>

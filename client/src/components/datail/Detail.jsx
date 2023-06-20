@@ -6,6 +6,7 @@ import { Link, useParams } from "react-router-dom";
 import style from "./Detail.module.css";
 import Loading from "../loading/Loading";
 import Error from "../error404/Error";
+import NavBar from "../navBar/NavBar";
 
 export default function Detail(){
 
@@ -29,6 +30,7 @@ export default function Detail(){
         <div>
             {Object.keys(myPokemon).length > 0 && !loading ?
             <div className={style.container}>
+                <NavBar/>
             <div>
                 <Link to="/home">
                    <button>HOME</button>
