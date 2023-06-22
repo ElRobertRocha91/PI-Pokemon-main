@@ -7,6 +7,8 @@ import Detail from './components/datail/Detail';
 import Form from './components/form/Form';
 import Error from './components/error404/Error';
 import About from './components/about/About';
+import axios from 'axios';
+axios.defaults.baseURL = 'http://localhost:3001/';
 
 //Switch => Solo va a machear las rutas que existan
 
