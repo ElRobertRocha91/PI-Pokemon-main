@@ -8,7 +8,7 @@ import Form from './components/form/Form';
 import Error from './components/error404/Error';
 import About from './components/about/About';
 import axios from 'axios';
-axios.defaults.baseURL = 'http://localhost:3001/';
+axios.defaults.baseURL = 'https://pi-pokemon-main-production-40d1.up.railway.app/';
 
 //Switch => Solo va a machear las rutas que existan
 
